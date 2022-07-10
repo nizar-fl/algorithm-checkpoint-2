@@ -1,0 +1,31 @@
+FUNCTION dot_product(V1 , V2) : return_type
+VAR
+    ps:=0;
+    n:=0;
+    
+BEGIN
+    FOR i FROM 0 TO V1.length STEP 1  DO
+        IF (ps = 0) THEN
+            n := n + 1;
+        END_IF
+        ps := ps + V1[i] * V2[i];
+
+    END_FOR
+    RETURN ps ;
+END
+
+
+ALGORITHM  orthogonal_vector
+VAR
+    V1: { 1, 2, 3, 4, 5};
+    V2: { 2, 4, 6, 8, 10};
+    ps:INTEGER;
+BEGIN
+
+    ps = dot_product(V1, V2);
+    IF (ps = 0) THEN
+        write("Vectors are orthogonal");
+    ELSE
+        write("Vectors are not orthogonal");
+    END_IF    
+END

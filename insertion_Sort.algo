@@ -1,0 +1,27 @@
+
+PROCEDURE insertion_Sort ( A : array of items )  
+
+// [3,2,1,4,5,6,7,8,9,10]
+VAR
+   int holePosition
+   int valueToInsert
+BEGIN	
+   for i = 1 to length(A) inclusive do:
+	
+      
+      valueToInsert = A[i]
+      holePosition = i
+      
+      
+		
+      while holePosition > 0 and A[holePosition-1] > valueToInsert do:
+         A[holePosition] = A[holePosition-1]
+         holePosition = holePosition -1
+      end while
+		
+      
+      A[holePosition] = valueToInsert
+      
+   end for
+END	
+END PROCEDURE
